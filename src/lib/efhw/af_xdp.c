@@ -478,7 +478,7 @@ static int xdp_bind(struct socket* sock, int ifindex, unsigned queue, unsigned f
 /* Link an XDP program to an interface */
 static int xdp_set_link(struct net_device* dev, int prog_fd)
 {
-  if( dev->netdev_ops->ndo_bpf ) {
+  if( 0 ) {
     struct netdev_bpf bpf = {
       .command = XDP_SETUP_PROG,
       .prog = NULL,
