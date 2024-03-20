@@ -440,6 +440,7 @@ efrm_nic_add(void *drv_device, struct device *dev,
 		/* Again, PCI VFs may be available. */
 		EFRM_ERR("%s: ERROR: hardware init failed rc=%d",
 			 dev && dev_name(dev) ? dev_name(dev) : "?", rc);
+		goto failed;
 	}
 	efrm_resource_manager_add_total(EFRM_RESOURCE_VI,
 					efrm_nic->max_vis);
